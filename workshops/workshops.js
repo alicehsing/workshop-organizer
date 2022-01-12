@@ -1,5 +1,5 @@
 import { checkAuth, logout, getWorkshops, deleteParticipant } from '../fetch-utils.js';
-import { renderParticipant } from './render-utils.js';
+import { renderParticipant } from '../render-utils.js';
 
 checkAuth();
 
@@ -30,6 +30,7 @@ async function fetchAndDisplayWorkshops() {
         const participantsEl = document.createElement('div');
 
         workshopEl.classList.add('workshop');
+        participantsEl.classList.add('participants');
         nameEl.textContent = workshop.name;
         workshopEl.append(nameEl, participantsEl);
 

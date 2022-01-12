@@ -161,8 +161,12 @@ label {
     transition: .2s all ease-in-out;
     margin: none;
     padding: none;
-    
+} 
 
 .participant:hover {
     background-color: #f2e9e4;
+}
+
+.participants{
+    border-top: solid 2px rgb(231, 201, 201);
 }
