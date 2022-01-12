@@ -137,3 +137,7 @@ footer {
     display: flex;
     flex-direction: column;
 }
+
+label {
+    display: block;
+}
