@@ -12,6 +12,7 @@ logoutButton.addEventListener('click', () => {
     logout();
 });
 
+//on submit, create a participant in supabase
 form.addEventListener('submit', async(e) => {
     e.preventDefault();
     const data = new FormData(form);

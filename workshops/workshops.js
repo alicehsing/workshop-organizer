@@ -11,10 +11,12 @@ logoutButton.addEventListener('click', () => {
     logout();
 });
 
+//on load,fetch and display the workshops and its participants in supabase
 window.addEventListener('load', async() => {
     fetchAndDisplayWorkshops();
 });
 
+//create a function that fetches and displays the workshops and its participants in supabase
 async function fetchAndDisplayWorkshops() {
     //fetch the workshops from supabase
     const workshops = await getWorkshops();
@@ -45,7 +47,7 @@ async function fetchAndDisplayWorkshops() {
             participantsEl.append(newParticipantEl);
 
             //append participantsEl and nameEl to the workshopEl
-            workshopEl.append(participantsEl, nameEl);
+            workshopEl.append(nameEl, participantsEl);
         }
     //append the workshopEl to the workshopListEl
         workshopListEl.append(workshopEl);
