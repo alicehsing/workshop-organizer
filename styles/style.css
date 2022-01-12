@@ -129,3 +129,11 @@ footer {
 .auth-container button {
     margin: 10px;
 }
+
+.workshop {
+    border: solid 2px plum;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
