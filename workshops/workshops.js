@@ -26,7 +26,7 @@ async function fetchAndDisplayWorkshops() {
     for (let workshop of workshops) {
         //create three elements for each workshop: one for the entire workshop, one to hold the workshop name, and one to hold the participant
         const workshopEl = document.createElement('div');
-        const nameEl = document.createElement('h3');
+        const nameEl = document.createElement('a');
         const participantsEl = document.createElement('div');
 
         workshopEl.classList.add('workshop');
