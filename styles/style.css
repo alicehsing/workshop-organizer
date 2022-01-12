@@ -160,6 +160,15 @@ p.participant{
 
 label {
     display: block;
+    background-color: #b1a2af;
+    margin: 10px;
+    padding:10px;
+    border-radius: 5px;
+}
+
+input {
+    border-radius: 5px;
+    border: solid 2px #f2e9e4;
 }
 
 .participant {
@@ -180,4 +189,15 @@ label {
 
 a {
     font-size: larger;
+}
+
+.add-participant {
+    border: solid 10px #f2e9e4;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.participant-form {
+    display: flex;
+    flex-direction: column;
 }
