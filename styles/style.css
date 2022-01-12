@@ -38,10 +38,10 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     border: solid 2px var(--color1);
 }
 
@@ -109,6 +109,13 @@ footer {
     position: fixed;
     right: 20px;
     top: 90px;
+    background-color: #9a8c98;
+    color: #f2e9e4;
+    border: solid 6px #f2e9e4;
+    border-radius: 50%;
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
 }
 
 .auth-main {
@@ -128,4 +135,69 @@ footer {
 
 .auth-container button {
     margin: 10px;
+}
+
+.workshop {
+    border: solid 10px #f2e9e4;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #9a8c98;
+    color: #f2e9e4;
+    text-align:center;
+}
+
+p.participant{
+    text-align:left;
+    margin: 0;
+    padding: 0;
+    color: #22223b;
+}
+
+label {
+    display: block;
+    background-color: #b1a2af;
+    margin: 10px;
+    padding:10px;
+    border-radius: 5px;
+}
+
+input {
+    border-radius: 5px;
+    border: solid 2px #f2e9e4;
+}
+
+.participant {
+    /* border: solid 1px black; */
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+    margin: none;
+    padding: none;
+} 
+
+.participant:hover {
+    background-color: #f2e9e4;
+}
+
+.participants {
+    border-top: solid 2px rgb(231, 201, 201);
+}
+
+a {
+    font-size: larger;
+}
+
+.add-participant {
+    border: solid 10px #f2e9e4;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.participant-form {
+    display: flex;
+    flex-direction: column;
 }
