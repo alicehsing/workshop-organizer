@@ -31,10 +31,20 @@ export async function deleteParticipant(id) {
     return checkError(response);
 }
 
+//stretch goal: update participant's workshop
+export async function updateParticipant(workshop_id, id) {
+    const response = await client
+        .from('participants')
+        .update({ workshop_id: workshop_id })
+        .match({ id: id })
+        .single();
+
+    return checkError(response);
+}
+
 export async function getUser() {
     return client.auth.session();
 }
-
 
 export async function checkAuth() {
     const user = await getUser();

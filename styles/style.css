@@ -189,15 +189,27 @@ input {
 
 a {
     font-size: larger;
+    text-decoration: none;
 }
 
 .add-participant {
-    border: solid 10px #f2e9e4;
+    border: solid 2px #f2e9e4;
     border-radius: 10px;
+    height: 30px;
     cursor: pointer;
 }
 
 .participant-form {
     display: flex;
     flex-direction: column;
+}
+
+.delete {
+    background-color: #e04c41;
+    color: #f2e9e4;
+    border: solid 2px #f2e9e4;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 100px;
+    height: 30px;
 }
