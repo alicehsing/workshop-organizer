@@ -17,15 +17,18 @@ form.addEventListener('submit', async(e) => {
     e.preventDefault();
     const data = new FormData(form);
     const name = data.get('name');
+    const email = data.get('email');
     const workshopId = data.get('workshop-id');
     
     //use createParticipant() to create a participant with the name and workshop id
     await createParticipant({
         name: name,
+        email: email,
         workshop_id: workshopId
     });
     
     form.reset();
+    window.location.href = '../workshops';
 });
 
 //on load, fetch the workshops. Use these workshops to create the dropdown to allow user add a participant to a workshop

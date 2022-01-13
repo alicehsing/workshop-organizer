@@ -39,6 +39,7 @@ async function fetchAndDisplayWorkshops() {
         nameEl.textContent = workshop.name;
         workshopEl.append(nameEl, participantsEl);
 
+        
         //for each of the workshops's participants
         for (let participant of workshop.participants) {
             const newParticipantEl = renderParticipant(participant);

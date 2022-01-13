@@ -169,6 +169,7 @@ label {
 input {
     border-radius: 5px;
     border: solid 2px #f2e9e4;
+    width: 180px;
 }
 
 .participant {

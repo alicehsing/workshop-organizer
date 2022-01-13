@@ -5,8 +5,11 @@ import {
     deleteParticipant
 } from '../fetch-utils.js';
 
+import { getParticipants } from '../fetch-utils.js';
+
 
 const form = document.querySelector('.participant-form');
+const participantEl = document.querySelector('display-participant');
 const logoutButton = document.getElementById('logout');
 
 logoutButton.addEventListener('click', () => {
@@ -39,6 +42,8 @@ window.addEventListener('load', async() => {
             await deleteParticipant(id); 
         });
     }
+
+    await fetchAndDisplayParticipants();
 });
 
 //on submit, update a participant's workshop in supabase
@@ -46,10 +51,25 @@ form.addEventListener('submit', async(e) => {
     e.preventDefault();
     const data = new FormData(form);
     const workshopId = data.get('workshop-id');
+    const email = data.get('email');
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
     //use updateParticipant() to update a participant's workshop id 
-    await updateParticipant(workshopId, id);
+    await updateParticipant(workshopId, email, id);
     
     form.reset();
 });
+
+
+//stretch...work in progress
+async function fetchAndDisplayParticipants() {
+    const participants = await getParticipants();
+    const div = document.querySelector('div');
+    for (let participant of participants) {
+        
+        const updateParticipantEl = document.createElement('p');
+        updateParticipantEl.textContent = `${participant.name}:${participant.email}`;
+        div.append(updateParticipantEl);
+    }
+    participantEl.append(div);
+}

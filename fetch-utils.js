@@ -21,6 +21,15 @@ export async function createParticipant(participant) {
     return checkError(response);
 }
 
+export async function getParticipants() {
+    const response = await client
+        .from('participants')
+        //give me every property for workshops
+        .select();
+
+    return checkError(response);
+}
+
 export async function deleteParticipant(id) {
     const response = await client
         .from('participants')
@@ -32,10 +41,13 @@ export async function deleteParticipant(id) {
 }
 
 //stretch goal: update participant's workshop
-export async function updateParticipant(workshop_id, id) {
+export async function updateParticipant(workshop_id, email, id) {
     const response = await client
         .from('participants')
-        .update({ workshop_id: workshop_id })
+        .update({ 
+            workshop_id: workshop_id,
+            email: email
+        })
         .match({ id: id })
         .single();
 
