@@ -1,4 +1,9 @@
-import { checkAuth, logout, getWorkshops, deleteParticipant } from '../fetch-utils.js';
+import { 
+    checkAuth, 
+    logout, 
+    getWorkshops,
+    //deleteParticipant
+} from '../fetch-utils.js';
 import { renderParticipant } from '../render-utils.js';
 
 checkAuth();
@@ -39,10 +44,10 @@ async function fetchAndDisplayWorkshops() {
             const newParticipantEl = renderParticipant(participant);
 
             //add an event listener to the new participant. On click, delete the participant, then re-fetch and re-display all workshops
-            newParticipantEl.addEventListener('click', async() => {
-                await deleteParticipant(participant.id);
-                fetchAndDisplayWorkshops();
-            });
+            // newParticipantEl.addEventListener('click', async() => {
+            //     // await deleteParticipant(participant.id);
+            //     fetchAndDisplayWorkshops();
+            // });
 
             //append this new participant to participantsEl
             participantsEl.append(newParticipantEl);
